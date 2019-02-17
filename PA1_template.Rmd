@@ -134,7 +134,7 @@ Add time column to construct the plot
 mean_by_interval_p$time <- as.POSIXct( "1970-01-01", tz = "CET" ) + as.difftime( floor(mean_by_interval_p$interval/100)*60+mean_by_interval_p$interval %% 100, units="mins"
 )
 ```
-
+Note: 1970 date is not important as we will just use the time of the day  
 
 Plot the differences in activity patern between weekdays and weekends
 ```{r}

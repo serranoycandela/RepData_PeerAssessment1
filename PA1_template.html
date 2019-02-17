@@ -234,6 +234,7 @@ activity_p$day_type &lt;- as.factor(ifelse(weekdays(activity_p$date) %in% weeken
 <p>Add time column to construct the plot</p>
 <pre class="r"><code>mean_by_interval_p$time &lt;- as.POSIXct( &quot;1970-01-01&quot;, tz = &quot;CET&quot; ) + as.difftime( floor(mean_by_interval_p$interval/100)*60+mean_by_interval_p$interval %% 100, units=&quot;mins&quot;
 )</code></pre>
+<p>Note: 1970 date is not important as we will just use the time of the day</p>
 <p>Plot the differences in activity patern between weekdays and weekends</p>
 <pre class="r"><code>ggplot(data = mean_by_interval_p, mapping = aes(x = time, y = steps)) +
     geom_line() +
